@@ -2,7 +2,7 @@ import React from 'react';
 
 class Homepage extends React.Component {
 
-    goToApp(e) {
+    goToApp(event) {
         console.log('You clicked submit');
         //Get the value of the inpu field
         const managerId = this.managerInput.value;
