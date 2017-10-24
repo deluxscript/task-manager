@@ -1,28 +1,46 @@
-.App {
-  text-align: center;
+.main {
+  background-image: url(../Images/puzzle.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.main-content {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.75);
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.white {
   color: white;
 }
-
-.App-title {
-  font-size: 1.5em;
+.FormContent {
+  text-align: center;
 }
-
-.App-intro {
-  font-size: large;
+input, select, button {
+  height: 34px;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+input[type="text"] {
+  padding-left: 10px;
+  margin: 0;
+  font-size: 16px;
+  width: 50%;
+}
+.FormContent h1 {
+  text-transform: uppercase;
+  font-size: 54px;
+}
+.FormContent button {
+  margin-left: 20px;
+  padding: 0 25px;
+  text-transform: uppercase;
+  background-color: #02a8f3;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
