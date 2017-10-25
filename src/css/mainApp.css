@@ -1,0 +1,87 @@
+.mainApp {
+    width: 100%;
+    padding: 0;
+    display: table;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    /*margin: 0 auto;
+    width: 70%;
+    text-align: -webkit-center;*/
+    
+}
+.middleOverlay {
+    padding: 0;
+    vertical-align: middle;
+    display: table-cell;
+    margin: 0;
+}
+.Task {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+.TaskList, .CreateTask {
+    min-height: 70vh;
+    text-align: center;
+    background-color: white;
+    display: inline-block;
+    width: 35%;
+    margin: 0 20px;
+    
+}
+.TaskList {
+    /*float: left;*/
+}
+.CreateTask {
+    /*float: right;*/
+}
+.TaskList-Header {
+    background: -moz-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #2ECEFE), color-stop(56%, #3FBAFE), color-stop(78%, #46B3FE), color-stop(100%, #2ECEFE)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ie10+ */
+    background: linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ECEFE', endColorstr='#2ECEFE',GradientType=1 ); /* ie6-9 */
+    color: white;
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.TaskList-Header:after {
+    content: "";
+    background: -moz-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #2ECEFE), color-stop(56%, #3FBAFE), color-stop(78%, #46B3FE), color-stop(100%, #2ECEFE)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ie10+ */
+    background: linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ECEFE', endColorstr='#2ECEFE',GradientType=1 ); /* ie6-9 */
+    height: 31px;
+    transform: skewY(-5deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.TaskList-Header:after {
+    bottom: -15px;
+}
+.CreateTask-Header {
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #B1B8BF;
+    border-bottom: 3px solid #B1B8BF;
+}

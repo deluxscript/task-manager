@@ -1,11 +1,19 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/Error.css';
 
 class Errorpage extends React.Component {
+
+  componentDidMount(){
+    // Set the style
+    document.body.style.backgroundColor = "black"
+  }
   render() {
     return (
-      <div className="App">
-        <p>Error Page</p>
+      <div className="mainC">
+        <div className="message">
+          <h1>404</h1>
+          <h3>The page you seek does not exist</h3>
+        </div>
       </div>
     );
   }

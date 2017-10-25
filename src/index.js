@@ -14,7 +14,7 @@ const Root = () => {
 		<BrowserRouter>
 			<div>
 				<Match exactly pattern="/" component={Homepage} />
-				<Match pattern="/:managerId" component={App} />
+				<Match pattern="/app/:managerId" component={App} />
 				<Miss component={Errorpage} />
 			</div>
 		</BrowserRouter>
