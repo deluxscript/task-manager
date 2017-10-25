@@ -14,8 +14,9 @@ class Homepage extends React.Component {
 			<div className="main">
                 <div className="main-content">
                     <form className="FormContent" onSubmit={(e) => this.goToApp(e)}>
-                        <h1 className="white">Create your own manager</h1>
-                        <input type="text" required placeholder="Name of your manager" ref={(input) => {this.managerInput = input}} />
+                        <h1 className="white">Get your task under control</h1>
+                        <h4 className="white subext">with this task management tool</h4>
+                        <input type="text" required placeholder="Custom name" ref={(input) => {this.managerInput = input}} />
                         <button type="submit">Create Now</button>
                     </form>
                 </div>

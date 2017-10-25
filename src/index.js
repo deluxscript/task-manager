@@ -1,6 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { BrowserRouter, Match, Miss } from 'react-router';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/css/bootstrap-theme.css';
 //import registerServiceWorker from './registerServiceWorker';
 
 import App from './Components/App';

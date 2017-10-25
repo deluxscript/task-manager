@@ -14,10 +14,12 @@
     "stylus": "0.54.5"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "history": "4.2.0",
     "re-base": "2.2.0",
     "react": "15.3.2",
     "react-addons-css-transition-group": "15.3.2",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "15.3.2",
     "react-router": "4.0.0-alpha.4"
   },

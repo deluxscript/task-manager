@@ -18,6 +18,10 @@
 .white {
   color: white;
 }
+.subext {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 .FormContent {
   text-align: center;
 }

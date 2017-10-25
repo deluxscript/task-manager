@@ -19,25 +19,18 @@
     margin: 0;
 }
 .Task {
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
     padding: 10px;
 }
 .TaskList, .CreateTask {
-    min-height: 70vh;
+    min-height: 91vh;
     text-align: center;
-    background-color: white;
-    display: inline-block;
-    width: 35%;
+    background-color: whitesmoke;
+    padding: 0px;
     margin: 0 20px;
     
-}
-.TaskList {
-    /*float: left;*/
-}
-.CreateTask {
-    /*float: right;*/
 }
 .TaskList-Header {
     background: -moz-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ff3.6+ */
@@ -82,6 +75,63 @@
     padding: 20px;
     box-sizing: border-box;
     font-size: 18px;
-    color: #B1B8BF;
+    color: #5E6784;
     border-bottom: 3px solid #B1B8BF;
+}
+.CreateTask-Content {
+    padding: 20px 40px;
+}
+.createTask {
+    text-align: initial;
+}
+.createTask div {
+    margin-bottom: 15px;
+}
+.formFields {
+    margin-top: 10px !important;
+    width: 100% !important;
+    color: #B1B8BF !important;
+    border: none;
+    box-shadow: 0px 2px 10px #fff;
+}
+.formFields:focus {
+    outline: none;
+}
+label {
+    color: #5E6784;
+    width: 100%;
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+.formBtn {
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    background: -moz-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #2ECEFE), color-stop(56%, #3FBAFE), color-stop(78%, #46B3FE), color-stop(100%, #2ECEFE)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ie10+ */
+    background: linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ECEFE', endColorstr='#2ECEFE',GradientType=1 ); /* ie6-9 */
+}
+.TaskList-Content {
+    margin-top: 40px;
+    padding: 20px;
+}
+.Tasklisting {
+    padding: 0;
+    list-style-type: none;
+}
+.well {
+    background: white;
+    border: none;
+    padding: 10px;
+    text-align: initial;
+    /*border-left: 5px solid green;*/
+}
+.date {
+    float: right;
 }
