@@ -36,7 +36,7 @@ class App extends React.Component {
         <div className="middleOverlay">
           <div className="Task">
             <div className="row">
-              <div className="col-md-5 TaskList">
+              <div className="col-md-6 TaskList">
                 <div className="TaskList-Header">
                   Your Tasks
                 </div>
@@ -50,7 +50,7 @@ class App extends React.Component {
                   </ul>
                 </div>
               </div>
-              <div className="col-md-5 CreateTask">
+              <div className="col-md-4 CreateTask">
                 <div className="CreateTask-Header">
                   Create a Task
                 </div>

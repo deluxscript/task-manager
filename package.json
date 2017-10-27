@@ -20,7 +20,9 @@
     "react": "15.3.2",
     "react-addons-css-transition-group": "15.3.2",
     "react-bootstrap": "^0.31.5",
+    "react-day-picker": "^6.2.1",
     "react-dom": "15.3.2",
+    "react-icons": "^2.2.7",
     "react-router": "4.0.0-alpha.4"
   },
   "scripts": {

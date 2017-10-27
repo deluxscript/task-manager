@@ -19,7 +19,7 @@
     margin: 0;
 }
 .Task {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
     padding: 10px;
@@ -60,7 +60,7 @@
     background: -ms-linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* ie10+ */
     background: linear-gradient(45deg, #2ECEFE 0%, #3FBAFE 56%, #46B3FE 78%, #2ECEFE 100%); /* w3c */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ECEFE', endColorstr='#2ECEFE',GradientType=1 ); /* ie6-9 */
-    height: 31px;
+    height: 42px;
     transform: skewY(-5deg);
     position: absolute;
     left: 0;
@@ -69,7 +69,7 @@
 }
 
 .TaskList-Header:after {
-    bottom: -15px;
+    bottom: -21px;
 }
 .CreateTask-Header {
     padding: 20px;
@@ -134,4 +134,23 @@ label {
 }
 .date {
     float: right;
+}
+.ModalHeader {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.closeModal {
+    color: white;
+    background: #5E6784;
+    border-radius: 50%;
+    padding: 0 5px;
+    font-size: 20px;
+    float: right;
+}
+a {
+    text-decoration: none !important;
+}
+.closeModal, .fullDetail {
+    cursor: pointer;
 }
