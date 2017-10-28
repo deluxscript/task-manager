@@ -5,7 +5,7 @@ import '../../css/mainApp.css';
 
 class TaskForm extends React.Component {
 
-    createTask(event) {
+    createTask = (event) => {
         event.preventDefault();
         console.log('You submitted your task');
 
@@ -20,32 +20,32 @@ class TaskForm extends React.Component {
 
         this.taskForm.reset();
         this.props.Tasklist(Task);
-    }
+    };
 
   render() {
     return (
-        <form ref={(input) => {this.taskForm = input}} className="createTask" onSubmit={(e) => this.createTask(e)}>
+        <form ref={(input) => this.taskForm = input} className="createTask" onSubmit={(e) => this.createTask(e)}>
             <div>
                 <label htmlFor="name">Name<br />
-                    <input ref={(input) => {this.name = input}} type="text" className="formFields"/>
+                    <input ref={(input) => this.name = input} type="text" className="formFields"/>
                 </label>
             </div>
             
             <div>
                 <label htmlFor="desc">Description<br />
-                    <textarea ref={(input) => {this.desc = input}} className="formFields" rows="7"></textarea>
+                    <textarea ref={(input) => this.desc = input} className="formFields" rows="7"></textarea>
                 </label>
             </div>
 
             <div>
                 <label htmlFor="date">Assigned Date<br />
-                    <input ref={(input) => {this.date = input}} type="date" className="formFields"/>
+                    <input ref={(input) => this.date = input} type="date" className="formFields"/>
                 </label>
             </div>
 
             <div>
                 <label htmlFor="level">Urgency Level<br />
-                    <select ref={(input) => {this.level = input}} className="formFields">
+                    <select ref={(input) => this.level = input} className="formFields">
                         <option value="Normal">Nomal</option>
                         <option value="Urgent">Urgent</option>
                         <option value="Rapid Response">Rapid Response</option>

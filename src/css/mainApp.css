@@ -132,8 +132,11 @@ label {
     text-align: initial;
     /*border-left: 5px solid green;*/
 }
-.date {
+.date, .delete {
     float: right;
+}
+.delete {
+    cursor: pointer;
 }
 .ModalHeader {
     text-align: center;

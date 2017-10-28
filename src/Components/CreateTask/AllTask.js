@@ -33,7 +33,6 @@ class AllTask extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.toggleSwitch = this.toggleSwitch.bind(this);
   }
 
   toggleSwitch = () => {
@@ -43,6 +42,10 @@ class AllTask extends React.Component {
       };
     });
   };
+
+  renderDeleteBtn = (key) => {
+    
+  }
 
   openModal() {
     this.setState({showModal: true});
@@ -78,15 +81,15 @@ class AllTask extends React.Component {
 
   render() {
     
-    const {details} = this.props;
+    const { details, index } = this.props;
     const SwitchElement = this.state.switched;
     const taskResult = SwitchElement === false;
     const btnText = taskResult ? 'Task not yet completed' : 'Task completed';
 
     return (
         <li>
-          <div id={this.props.index} className="well">
-            <p className="bold">{details.name}<span className="date"><FaTrashO /></span></p>
+          <div id={index} className="well">
+            <p className="bold">{details.name}<span title="Delete Task" className="delete" onClick={() => this.props.deleteTask(index)}><FaTrashO /></span></p>
             {/*<p>{details.desc}</p>*/}
             <p>Urgency Level - <span className="levelText">{details.level}</span></p>
             <div title="Toggle for task completion"><Switch onClick={this.toggleSwitch} on={this.state.switched} className='other-class'/></div>
@@ -114,5 +117,6 @@ class AllTask extends React.Component {
     );
   }
 }
+
 
 export default AllTask;

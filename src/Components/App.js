@@ -6,31 +6,33 @@ import '../css/mainApp.css';
 
 class App extends React.Component {
 
-  constructor() {
-		super();
+  // constructor() {
+	// 	super();
 
-		this.Tasklist = this.Tasklist.bind(this);
-    this.deleteTask = this.deleteTask.bind(this);
-		//initialState
-		this.state = {
-			Tasks: {}
-		};
-	}
+	// 	// this.Tasklist = this.Tasklist.bind(this);
+  //   // this.deleteTask = this.deleteTask.bind(this);
+		
+	// }
 
-  Tasklist(Task) {
+  //initialState
+  state = {
+    Tasks: {}
+  };
+
+  Tasklist = (Task) => {
     const Tasks = {...this.state.Tasks};
     //add in our new Task
 		const timestamp = Date.now();
 		Tasks[`Task-${timestamp}`] = Task;
 		//set State
 		this.setState({Tasks});
-  }
+  };
 
-  deleteTask(key){
+  deleteTask = (key) => {
     const Tasks = {...this.state.Tasks};
-    Tasks[key] = null;
+    delete Tasks[key];
     this.setState({Tasks});
-  }
+  };
   
   componentDidMount(){
     // Set the style
@@ -52,7 +54,7 @@ class App extends React.Component {
                     {
                       Object
                         .keys(this.state.Tasks)
-                        .map(key => <AllTask key={key} index={key} details={this.state.Tasks[key]} />)
+                        .map(key => <AllTask key={key} index={key} details={this.state.Tasks[key]} deleteTask={this.deleteTask}/>)
                     }
                   </ul>
                 </div>
