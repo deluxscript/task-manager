@@ -10,6 +10,7 @@ class App extends React.Component {
 		super();
 
 		this.Tasklist = this.Tasklist.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
 		//initialState
 		this.state = {
 			Tasks: {}
@@ -25,6 +26,12 @@ class App extends React.Component {
 		this.setState({Tasks});
   }
 
+  deleteTask(key){
+    const Tasks = {...this.state.Tasks};
+    Tasks[key] = null;
+    this.setState({Tasks});
+  }
+  
   componentDidMount(){
     // Set the style
     document.body.style.backgroundColor = "#F9FBFB"

@@ -27,19 +27,19 @@ class TaskForm extends React.Component {
         <form ref={(input) => {this.taskForm = input}} className="createTask" onSubmit={(e) => this.createTask(e)}>
             <div>
                 <label htmlFor="name">Name<br />
-                    <input ref={(input) => {this.name = input}} type="text" required className="formFields"/>
+                    <input ref={(input) => {this.name = input}} type="text" className="formFields"/>
                 </label>
             </div>
             
             <div>
                 <label htmlFor="desc">Description<br />
-                    <textarea ref={(input) => {this.desc = input}} className="formFields" required rows="7"></textarea>
+                    <textarea ref={(input) => {this.desc = input}} className="formFields" rows="7"></textarea>
                 </label>
             </div>
 
             <div>
                 <label htmlFor="date">Assigned Date<br />
-                    <input ref={(input) => {this.date = input}} type="date" required className="formFields"/>
+                    <input ref={(input) => {this.date = input}} type="date" className="formFields"/>
                 </label>
             </div>
 
