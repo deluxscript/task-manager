@@ -181,6 +181,7 @@ a {
 .resultBtn {
     border: none;
     font-weight: 600;
+    cursor: not-allowed;
 }
 button[disabled] {
     cursor: default;
@@ -192,4 +193,15 @@ button[disabled] {
     border: 1px solid red !important;
     height: 23px;
     font-family: monospace;
+}
+.task-edit {
+    margin: 0 auto;
+    width: 60%;
+    padding: 20px;
+}
+.editFields {
+    width: 100% !important;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-bottom: 15px !important;
 }

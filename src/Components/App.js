@@ -26,12 +26,19 @@ class App extends React.Component {
 		Tasks[`Task-${timestamp}`] = Task;
 		//set State
 		this.setState({Tasks});
+
   };
 
   deleteTask = (key) => {
     const Tasks = {...this.state.Tasks};
     delete Tasks[key];
     this.setState({Tasks});
+  };
+
+  updateTask = (key, updatedTask) => {
+    const Tasks = {...this.state.Tasks};
+    Tasks[key] = updatedTask;
+    this.setState({ Tasks });
   };
   
   componentDidMount(){
@@ -54,7 +61,7 @@ class App extends React.Component {
                     {
                       Object
                         .keys(this.state.Tasks)
-                        .map(key => <AllTask key={key} index={key} details={this.state.Tasks[key]} deleteTask={this.deleteTask}/>)
+                        .map(key => <AllTask key={key} index={key} details={this.state.Tasks[key]} deleteTask={this.deleteTask} Tasks={this.state.Tasks} updateTask={this.updateTask} />)
                     }
                   </ul>
                 </div>
