@@ -1,22 +1,15 @@
 import React from 'react';
 import TaskForm from './CreateTask/TaskForm';
 import AllTask from './CreateTask/AllTask';
+import AppBase from '../appbase';
 
 import '../css/mainApp.css';
 
 class App extends React.Component {
 
-  // constructor() {
-	// 	super();
-
-	// 	// this.Tasklist = this.Tasklist.bind(this);
-  //   // this.deleteTask = this.deleteTask.bind(this);
-		
-	// }
-
-  //initialState
   state = {
-    Tasks: {}
+    Tasks: {},
+    switched: false
   };
 
   Tasklist = (Task) => {
@@ -40,7 +33,32 @@ class App extends React.Component {
     Tasks[key] = updatedTask;
     this.setState({ Tasks });
   };
+
+  componentWillMount(){
+
+    this.ref = AppBase.syncState(`${this.props.params.managerId}/Tasks`, {
+      context: this,
+      state: 'Tasks'
+    });
+
+    //Is there an added task in localStorage?
+    const localStorageStore = localStorage.getItem(`task-${this.props.params.managerId}`);
+
+    if(localStorageStore) {
+      this.setState({
+        Tasks: JSON.parse(localStorageStore)
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    AppBase.removeBinding(this.ref);
+  }
   
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(`task-${this.props.params.managerId}`, JSON.stringify(nextState.Tasks));
+  }
+
   componentDidMount(){
     // Set the style
     document.body.style.backgroundColor = "#F9FBFB"
@@ -61,17 +79,17 @@ class App extends React.Component {
                     {
                       Object
                         .keys(this.state.Tasks)
-                        .map(key => <AllTask key={key} index={key} details={this.state.Tasks[key]} deleteTask={this.deleteTask} Tasks={this.state.Tasks} updateTask={this.updateTask} />)
+                        .map(key => <AllTask key={key} index={key} details={this.state.Tasks[key]} deleteTask={this.deleteTask} Tasks={this.state.Tasks} updateTask={this.updateTask} params={this.props.params} />)
                     }
                   </ul>
                 </div>
               </div>
               <div className="col-md-4 CreateTask">
                 <div className="CreateTask-Header">
-                  Create a Task
+                  Start Managing Your Task
                 </div>
                 <div className="CreateTask-Content">
-                  <TaskForm Tasklist={this.Tasklist}/>
+                  <TaskForm Tasklist={this.Tasklist} managerId={this.props.params.managerId}/>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import AppBase from '../../appbase';
 import Switch from 'react-toggle-switch';
 import FaTrashO from 'react-icons/lib/fa/trash-o';
 // import FaPencil from 'react-icons/lib/fa/pencil';
@@ -27,7 +28,8 @@ class AllTask extends React.Component {
 
     this.state = {
       showModal: false,
-      switched: false
+      switched: false,
+      uid: null
     };
 
     this.openModal = this.openModal.bind(this);
@@ -56,10 +58,39 @@ class AllTask extends React.Component {
     this.setState({showModal: false});
   }
 
+  componentWillMount(){
+
+    
+
+  //Is any tasked toggled as completed in localStorage?
+  const TlocalStorageStore = localStorage.getItem(`switched-${this.props.index}`);
+
+  if(TlocalStorageStore) {
+    this.setState({
+      switched: JSON.parse(TlocalStorageStore)
+    });
+  }
+}
+
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(`switched-${this.props.index}`, JSON.stringify(nextState.switched));
+  }
+
+   handleChange = (e, key) => {
+    const Task = this.props.Tasks[key];
+    // take a copy of that task and update it with the new data
+    const updatedTask = {
+      ...Task,
+      [e.target.name]: e.target.value
+    }
+    this.props.updateTask(key, updatedTask);
+  }
+
    renderEdit = (key) => {
      const details = this.props.Tasks[key];
      return(
-        <div id={key} className="task-edit" key={key}>
+        <div ref={key} className="task-edit" key={key}>
           <p>Task Name - {details.name}</p>
           <div>
             <input type="text" name="name" value={details.name} className="editFields" placeholder="task Name" onChange={(e) => this.handleChange(e, key)} />
@@ -77,19 +108,16 @@ class AllTask extends React.Component {
           </div>
           
           <div>
-            <input type="date" name="date" value={details.date} className="editFields" placeholder="task Image" onChange={(e) => this.handleChange(e, key)}/>
+            <label>Start Date</label>
+            <input type="date" name="startDate" value={details.sDate} className="editFields" placeholder="task Image" onChange={(e) => this.handleChange(e, key)}/>
+          </div>
+
+          <div>
+            <label>End Date</label>
+            <input type="date" name="endDate" value={details.eDate} className="editFields" placeholder="task Image" onChange={(e) => this.handleChange(e, key)}/>
           </div>
         </div>
     )
-  }
-  handleChange = (e, key) => {
-    const Task = this.props.Tasks[key];
-    // take a copy of that task and update it with the new data
-    const updatedTask = {
-      ...Task,
-      [e.target.name]: e.target.value
-    }
-    this.props.updateTask(key, updatedTask);
   }
 
   componentDidMount(){
@@ -112,7 +140,7 @@ class AllTask extends React.Component {
   }
 
   render() {
-    
+
     const { details, index } = this.props;
     const SwitchElement = this.state.switched;
     const taskResult = SwitchElement === false;
@@ -128,7 +156,8 @@ class AllTask extends React.Component {
             <p>{details.desc}</p>
             <p>Urgency Level - <span className="levelText">{details.level}</span></p>
             <div title="Toggle for task completion"><Switch onClick={this.toggleSwitch} on={this.state.switched} className='other-class'/></div>
-            <a className="fullDetail" onClick={this.openModal}>Edit Task<span className="date">{details.date}</span></a>
+            <p className="fullDetail"><span>Start Date - {details.sDate}</span><span className="date">End Date - {details.eDate}</span></p>
+            <a className="fullDetail p-t-10" onClick={this.openModal}>Edit Task</a>
             <div>
               <button className="resultBtn" disabled={!taskResult}>{btnText}</button>
             </div>
@@ -137,10 +166,10 @@ class AllTask extends React.Component {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               style={customStyles}
-              contentLabel="Task Details"
+              contentLabel="Edit tasks on the go"
             >
             <p className="text-center">
-              <span className="ModalHeader" ref={subtitle => this.subtitle = subtitle}>Task Details</span>
+              <span className="ModalHeader" ref={subtitle => this.subtitle = subtitle}>Edit task on the go</span>
               <span className="closeModal" onClick={this.closeModal}>&times;</span>
             </p>
             {Object.keys(this.props.Tasks).map(this.renderEdit)}

@@ -199,9 +199,42 @@ button[disabled] {
     width: 60%;
     padding: 20px;
 }
+.p-t-10 {
+    padding-top: 10px;
+}
 .editFields {
     width: 100% !important;
     border: 1px solid;
     border-radius: 10px;
     margin-bottom: 15px !important;
+}
+.logout {
+    border: none;
+    padding: 0 20px;
+    background: #46B3FE;
+    color: white;
+    font-size: 16px;
+}
+.login p {
+    font-size: 16px;
+}
+.facebook {
+    margin-bottom: 20px;
+    border: none;
+    width: 100%;
+    background-color: cornflowerblue;
+    color: white;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.twitter {
+    margin-bottom: 20px;
+    border: none;
+    width: 100%;
+    background-color: green;
+    color: white;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
 }
