@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import AppBase from '../../appbase';
 import Switch from 'react-toggle-switch';
 import FaTrashO from 'react-icons/lib/fa/trash-o';
-// import FaPencil from 'react-icons/lib/fa/pencil';
 
 import '../../css/mainApp.css';
 import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
@@ -59,18 +57,15 @@ class AllTask extends React.Component {
   }
 
   componentWillMount(){
+    //Is any tasked toggled as completed in localStorage?
+    const TlocalStorageStore = localStorage.getItem(`switched-${this.props.index}`);
 
-    
-
-  //Is any tasked toggled as completed in localStorage?
-  const TlocalStorageStore = localStorage.getItem(`switched-${this.props.index}`);
-
-  if(TlocalStorageStore) {
-    this.setState({
-      switched: JSON.parse(TlocalStorageStore)
-    });
+    if(TlocalStorageStore) {
+      this.setState({
+        switched: JSON.parse(TlocalStorageStore)
+      });
+    }
   }
-}
 
 
   componentWillUpdate(nextProps, nextState) {

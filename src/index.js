@@ -24,4 +24,3 @@ const Root = () => {
 }
 
 render(<Root/>, document.querySelector('#root'));
-//registerServiceWorker();

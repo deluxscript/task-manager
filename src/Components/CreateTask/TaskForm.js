@@ -75,7 +75,7 @@ class TaskForm extends React.Component {
         <div className="login">
             <h2>Welcome to your Task Manager APP</h2>
             <p>Kindly click <Link to='/'>here</Link> to create your own manager and manage your tasks</p>
-            <p>Sign in to create manage your Tasks</p>
+            <p className="loginText">Sign in to create and manage your Tasks</p>
             <button className="facebook" onClick={() => this.authenticate('facebook')} >Log In with Facebook</button>
             <button className="twitter" onClick={() => this.authenticate('twitter')} >Log In with Twitter</button>
         </div>
@@ -90,68 +90,68 @@ class TaskForm extends React.Component {
         });
     }
 
-  render() {
-      
-    const logout = <button onClick={this.logout} className="logout">Log Out</button>;
+    render() {
+        
+        const logout = <button onClick={this.logout} className="logout">Log Out</button>;
 
-    // check if no user is logged in
-    if(!this.state.uid) {
-      return <div>{this.renderLogin()}</div>
-    }
+        // check if no user is logged in
+        if(!this.state.uid) {
+        return <div>{this.renderLogin()}</div>
+        }
 
-    // confirm they are the owner of the app
-    if(this.state.uid !== this.state.uniqueUser) {
-      return (
-        <div>
-          <p>Sorry you aren't the owner of this URL!</p>
-          <p>Kindly click <Link to='/'>here</Link> to create your own manager and manage your tasks</p>
-          {logout}
-        </div>
-      )
-    }
-
-    return (
-        <div>
+        // confirm they are the owner of the app
+        if(this.state.uid !== this.state.uniqueUser) {
+        return (
+            <div>
+            <p>Sorry you aren't the owner of this URL!</p>
+            <p>Kindly click <Link to='/'>here</Link> to create your own manager and manage your tasks</p>
             {logout}
-            <form ref={(input) => this.taskForm = input} className="createTask" onSubmit={(e) => this.createTask(e)}>
-                <div>
-                    <label htmlFor="name">Name<br />
-                        <input ref={(input) => this.name = input} type="text" className="formFields"/>
-                    </label>
-                </div>
-                
-                <div>
-                    <label htmlFor="desc">Description<br />
-                        <textarea ref={(input) => this.desc = input} className="formFields" rows="7"></textarea>
-                    </label>
-                </div>
+            </div>
+        )
+        }
 
-                <div>
-                    <label htmlFor="date">Start Date<br />
-                        <input ref={(input) => this.startDate = input} type="date" className="formFields"/>
-                    </label>
-                </div>
+        return (
+            <div>
+                {logout}
+                <form ref={(input) => this.taskForm = input} className="createTask" onSubmit={(e) => this.createTask(e)}>
+                    <div>
+                        <label htmlFor="name">Name<br />
+                            <input ref={(input) => this.name = input} type="text" className="formFields"/>
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label htmlFor="desc">Description<br />
+                            <textarea ref={(input) => this.desc = input} className="formFields" rows="7"></textarea>
+                        </label>
+                    </div>
 
-                <div>
-                    <label htmlFor="date">Deadline<br />
-                        <input ref={(input) => this.endDate = input} type="date" className="formFields"/>
-                    </label>
-                </div>
+                    <div>
+                        <label htmlFor="date">Start Date<br />
+                            <input ref={(input) => this.startDate = input} type="date" className="formFields"/>
+                        </label>
+                    </div>
 
-                <div>
-                    <label htmlFor="level">Urgency Level<br />
-                        <select ref={(input) => this.level = input} className="formFields">
-                            <option value="Normal">Nomal</option>
-                            <option value="Urgent">Urgent</option>
-                            <option value="Rapid Response">Rapid Response</option>
-                        </select>
-                    </label>
-                </div>
-                <button type="submit" className="formBtn">Add Task</button>
-            </form>
-        </div>
-    );
-  }
+                    <div>
+                        <label htmlFor="date">Deadline<br />
+                            <input ref={(input) => this.endDate = input} type="date" className="formFields"/>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label htmlFor="level">Urgency Level<br />
+                            <select ref={(input) => this.level = input} className="formFields">
+                                <option value="Normal">Nomal</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Rapid Response">Rapid Response</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button type="submit" className="formBtn">Add Task</button>
+                </form>
+            </div>
+        );
+    }
 }
 
 export default TaskForm;

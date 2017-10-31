@@ -218,6 +218,10 @@ button[disabled] {
 .login p {
     font-size: 16px;
 }
+.loginText {
+    font-size: 21px !important;
+    margin-top: 25px;
+}
 .facebook {
     margin-bottom: 20px;
     border: none;
