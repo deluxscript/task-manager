@@ -18,6 +18,7 @@ class Homepage extends React.Component {
                         <h4 className="white subext">with this task management tool</h4>
                         <input type="text" required placeholder="Custom name" ref={(input) => {this.managerInput = input}} />
                         <button type="submit">Create Now</button>
+                        <p className="white">Your manager link is accessible via (deluxscript.github.io/task-manager/custom-name)</p>
                     </form>
                 </div>
             </div>
