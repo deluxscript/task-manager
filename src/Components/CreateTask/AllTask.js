@@ -96,9 +96,9 @@ class AllTask extends React.Component {
 
           <div>
             <select type="text" name="level" value={details.level} className="editFields" placeholder="task Status" onChange={(e) => this.handleChange(e, key)}>
-              <option value="Normal">Fresh!</option>
-              <option value="Urgent">Sold Out!</option>
-              <option value="Rapid Response">Sold Out!</option>
+              <option value="Normal">Normal</option>
+              <option value="Urgent">Urgent</option>
+              <option value="Rapid Response">Rapid Response</option>
             </select>
           </div>
           
